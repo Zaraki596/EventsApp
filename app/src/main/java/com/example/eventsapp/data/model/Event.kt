@@ -1,6 +1,5 @@
 package com.example.eventsapp.data.model
 
-import android.media.MediaRouter
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -18,7 +17,6 @@ data class Event(
     val slug: String = "",
     val horizontal_cover_image: String = "",
     val vertical_cover_image: String = "",
-    val city: String = "",
     val venue_id: String = "",
     val venue_name: String = "",
     val venue_date_string: String = "",
@@ -26,13 +24,14 @@ data class Event(
     /*
     applicable filters contains the data with the value key which have strings value like
     today, tomorrow, weekend
-    if it contains all 3 values then event has been passed
+    if it contains all 3 values then event is always present
     if it contains either 2 i.e :
     today, weekend then its today,
     tomorrow, weekend then its day after today
-    if it contains none value then the event never happened or yet to happen
+    it it contains 1 i.e : today or tomorrow then it is onetime event
+    if it contains none value then the event never happened or yet to happen or it has been passed
     * */
-    val applicable_filters: List<String>?,
+    val applicable_filters: List<String> = listOf(),
     val price_display_string: String = "",
     val min_price: Int = 0
 

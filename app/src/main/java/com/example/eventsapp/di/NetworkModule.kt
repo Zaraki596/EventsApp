@@ -7,6 +7,7 @@ import com.example.eventsapp.utils.isNetworkAvailable
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -19,6 +20,7 @@ val networkModule = module {
             .addConverterFactory(
                 MoshiConverterFactory.create()
             )
+            .client(getOkHttpClient(androidContext()))
             .build()
             .create(EventsApiService::class.java)
     }
