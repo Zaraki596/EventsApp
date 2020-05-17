@@ -2,7 +2,7 @@ package com.example.eventsapp.di
 
 import android.content.Context
 import com.example.eventsapp.data.api.EventsApiService
-import com.example.eventsapp.data.repo.EventDataRepository
+import com.example.eventsapp.data.repo.EventsDataRepository
 import com.example.eventsapp.utils.isNetworkAvailable
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import okhttp3.Cache
@@ -26,7 +26,7 @@ val networkModule = module {
     }
 
     single {
-        EventDataRepository(get())
+        EventsDataRepository(get())
     }
 }
 
