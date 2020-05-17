@@ -1,12 +1,12 @@
 package com.example.eventsapp.ui.adapters
 
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.View.OnClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.eventsapp.data.model.Event
 import com.example.eventsapp.databinding.ItemFeaturedBinding
 import com.example.eventsapp.utils.loadImage
@@ -22,9 +22,6 @@ class FeaturedListAdapter : ListAdapter<Event, FeaturedListAdapter.FeaturedViewH
     override fun onBindViewHolder(holder: FeaturedViewHolder, position: Int) =
         holder.bind(getItem(position))
 
-    fun swapData(data: List<Event>) {
-        submitList(data.toMutableList())
-    }
 
     inner class FeaturedViewHolder(
         private val binding: ItemFeaturedBinding

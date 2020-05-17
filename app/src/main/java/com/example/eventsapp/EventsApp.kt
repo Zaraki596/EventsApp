@@ -16,7 +16,7 @@ class EventsApp : Application() {
 
     private fun initKoin() {
         startKoin {
-            androidContext(this@EventsApp)
+            androidContext(applicationContext)
             modules(networkModule, viewModelModule)
         }
     }
