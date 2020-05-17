@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EventsApp</string>
     <string name="menu_ui_mode">Dark Mode</string>
+    <string name="ruppee">\u20B9</string>
 </resources>
