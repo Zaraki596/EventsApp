@@ -5,7 +5,8 @@
     android:id="@+id/mtrl_card_normal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="4dp">
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -14,8 +15,7 @@
         <ImageView
             android:id="@+id/iv_display"
             android:layout_width="350dp"
-            android:layout_height="300dp"
-            android:scaleType="fitXY"
+            android:layout_height="200dp"
             app:layout_constraintBottom_toTopOf="@+id/ll_text_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,44 +37,37 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="₹9999" />
 
-        <TextView
-            android:id="@+id/tv_title"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tv_timing"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Kvizzing with the comedians" />
-
-        <TextView
-            android:id="@+id/tv_timing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tv_location"
-            app:layout_constraintEnd_toEndOf="@+id/tv_title"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            tools:text="May 16 &amp; 17 | Multiple Timeslots" />
-
-        <TextView
-            android:id="@+id/tv_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tv_timing"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_timing"
-            app:layout_constraintTop_toBottomOf="@+id/tv_timing"
-            tools:text="Watch on Zoom.us" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_display">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Kvizzing with the comedians" />
+
+            <TextView
+                android:id="@+id/tv_timing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="May 16 &amp; 17 | Multiple Timeslots" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Watch on Zoom.us" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
