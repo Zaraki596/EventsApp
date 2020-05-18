@@ -1,14 +1,17 @@
 package com.example.eventsapp.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventsapp.databinding.ActivityMainBinding
+import com.example.eventsapp.ui.adapters.BannerListAdpater
 import com.example.eventsapp.ui.adapters.FeaturedListAdapter
 import com.example.eventsapp.ui.adapters.NormalListAdpater
 import com.example.eventsapp.utils.State
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -23,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     private val mComedyListAdapter = NormalListAdpater()
     private val mKidsListAdapter = NormalListAdpater()
     private val mOnlineListAdapter = NormalListAdpater()
+
+    private val mBannerListAdpater = BannerListAdpater()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initViews()
         initData()
+
         binding.refreshMain.setOnRefreshListener {
             loadData()
         }
@@ -64,12 +71,17 @@ class MainActivity : AppCompatActivity() {
                     }.filter {
                         it.applicable_filters.isNotEmpty()
                     }
-
+                    val bannerList = state.data.banners.filter {
+                        it.priority == 0
+                    }
+                    Log.e("MainActivity", featuredList.toString())
                     mFeaturedListAdapter.submitList(featuredList)
                     mMusicListAdapter.submitList(musicList)
                     mComedyListAdapter.submitList(comedyList)
                     mKidsListAdapter.submitList(kidList)
                     mOnlineListAdapter.submitList(onlineCourseList)
+
+                    mBannerListAdpater.submitList(bannerList)
                 }
             }
 
@@ -89,11 +101,18 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerOnlineCourse.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+//        Setting up the recyclerview Adapter
         binding.recyclerFeatured.adapter = mFeaturedListAdapter
         binding.recyclerMusic.adapter = mMusicListAdapter
         binding.recyclerComedy.adapter = mComedyListAdapter
         binding.recyclerKids.adapter = mKidsListAdapter
         binding.recyclerOnlineCourse.adapter = mOnlineListAdapter
+//        ViewPager Setup
+        binding.viewpagerBanner.adapter = mBannerListAdpater
+        TabLayoutMediator(binding.tablayoutBanner, binding.viewpagerBanner) { tab, position ->
+
+        }.attach()
+
 
         loadData()
     }

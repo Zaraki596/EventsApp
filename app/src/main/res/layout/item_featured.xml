@@ -5,8 +5,8 @@
     android:id="@+id/mtrl_card_featured"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="4dp"
-    android:layout_marginEnd="4dp">
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -26,12 +26,13 @@
             android:id="@+id/tv_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/holo_red_light"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/holo_orange_dark"
             android:paddingStart="8dp"
             android:paddingTop="4dp"
             android:paddingEnd="8dp"
             android:paddingBottom="4dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
             android:textColor="@android:color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -41,14 +42,12 @@
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ic_coupon_"
+            android:background="@drawable/ic_coupon_01"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/ll_text_container"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             tools:text="₹9999" />
 
         <LinearLayout
