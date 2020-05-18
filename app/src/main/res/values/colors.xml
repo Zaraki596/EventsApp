@@ -2,5 +2,10 @@
 <resources>
     <color name="colorPrimary">#B60006</color>
     <color name="colorPrimaryDark">#710000</color>
-    <color name="colorAccent">@android:color/holo_orange_dark</color>
+    <color name="colorAccent">#ffff8800</color>
+    <color name="background">#F4F4F4</color>
+
+
+    <color name="textColor">#000</color>
+    <color name="textColorWhite">#fff</color>
 </resources>

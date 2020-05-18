@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recycler_16dp">16dp</dimen>
+    <dimen name="viewpager_height">192dp</dimen>
+    <dimen name="recycler_featured_height">350dp</dimen>
+    <dimen name="recycler_normal_height">265dp</dimen>
+    <dimen name="imageview_normal_width">350dp</dimen>
+    <dimen name="imageview_normal_height">200dp</dimen>
+    <dimen name="imageview_feature_width">250dp</dimen>
+    <dimen name="imageview_feature_height">285dp</dimen>
+
+    <dimen name="text_4dp">4dp</dimen>
+    <dimen name="text_8dp">8dp</dimen>
+    <dimen name="text_16dp">16dp</dimen>
+
+    <dimen name="elevation_default">8dp</dimen>
+    <dimen name="elevation_2dp">2dp</dimen>
+
+</resources>

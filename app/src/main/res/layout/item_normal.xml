@@ -5,8 +5,8 @@
     android:id="@+id/mtrl_card_normal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp">
+    android:layout_marginEnd="@dimen/recycler_16dp"
+    app:cardElevation="@dimen/elevation_default">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/iv_display"
-            android:layout_width="350dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/imageview_normal_width"
+            android:layout_height="@dimen/imageview_normal_height"
             app:layout_constraintBottom_toTopOf="@+id/ll_text_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,12 +25,9 @@
 
         <TextView
             android:id="@+id/tv_price"
+            style="@style/TextPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_coupon_01"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="@+id/iv_display"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="₹9999" />
@@ -47,27 +44,24 @@
 
             <TextView
                 android:id="@+id/tv_title"
+                style="@style/TextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@android:color/white"
                 tools:text="Kvizzing with the comedians" />
 
             <TextView
                 android:id="@+id/tv_timing"
+                style="@style/TextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@android:color/white"
                 tools:text="May 16 &amp; 17 | Multiple Timeslots" />
 
             <TextView
                 android:id="@+id/tv_location"
+                style="@style/TextDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
+                android:layout_marginBottom="@dimen/text_4dp"
                 tools:text="Watch on Zoom.us" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

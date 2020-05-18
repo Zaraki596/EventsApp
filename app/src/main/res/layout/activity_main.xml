@@ -36,112 +36,80 @@
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewpager_banner"
                         android:layout_width="match_parent"
-                        android:layout_height="192dp" />
+                        android:layout_height="@dimen/viewpager_height" />
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tablayout_banner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:tabMaxWidth="10dp"
-                        android:layout_gravity="bottom|center"
                         app:tabBackground="@drawable/tab_selector"
+                        android:animateLayoutChanges="true"
                         app:tabGravity="center"
-                        app:tabIndicatorHeight="0dp" />
+                        app:tabIndicatorHeight="0dp"
+                        app:tabMaxWidth="10dp" />
 
                     <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Featured"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="@android:color/black" />
+                        android:text="@string/featured" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_featured"
                         android:layout_width="match_parent"
-                        android:layout_height="340dp"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="@dimen/recycler_featured_height"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingStart="@dimen/recycler_16dp" />
 
                     <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Comedy"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="@android:color/black" />
+                        android:text="@string/comedy" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_comedy"
                         android:layout_width="match_parent"
-                        android:layout_height="288dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="@dimen/recycler_normal_height"
+                        android:layout_gravity="center"
+                        android:paddingStart="@dimen/recycler_16dp" />
 
                     <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Music"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="@android:color/black" />
+                        android:text="@string/music" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_music"
                         android:layout_width="match_parent"
-                        android:layout_height="288dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="@dimen/recycler_normal_height"
+                        android:paddingStart="@dimen/recycler_16dp" />
 
                     <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Kids"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="@android:color/black" />
+                        android:text="@string/kids" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_kids"
                         android:layout_width="match_parent"
-                        android:layout_height="288dp"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="@dimen/recycler_normal_height"
+                        android:paddingStart="@dimen/recycler_16dp" />
 
                     <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:text="Online Course"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="@android:color/black" />
+                        android:text="@string/online_course" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_online_course"
                         android:layout_width="match_parent"
-                        android:layout_height="288dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="@dimen/recycler_normal_height"
+                        android:layout_marginBottom="16dp"
+                        android:paddingStart="@dimen/recycler_16dp" />
                 </LinearLayout>
 
             </androidx.core.widget.NestedScrollView>

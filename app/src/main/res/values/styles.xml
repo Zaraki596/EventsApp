@@ -6,6 +6,53 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/background</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:layout_marginTop">@dimen/text_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/text_8dp</item>
+        <item name="android:layout_marginStart">@dimen/text_16dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="TextPrice">
+        <item name="android:background">@drawable/ic_coupon_01</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="elevation">@dimen/elevation_2dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextCategory">
+        <item name="android:layout_marginTop">@dimen/text_16dp</item>
+        <item name="android:background">?colorAccent</item>
+        <item name="android:paddingStart">@dimen/text_8dp</item>
+        <item name="android:paddingTop">@dimen/text_4dp</item>
+        <item name="android:paddingEnd">@dimen/text_8dp</item>
+        <item name="android:paddingBottom">@dimen/text_4dp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:elevation">@dimen/elevation_2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextDescription">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginStart">@dimen/text_8dp</item>
+        <item name="android:layout_marginEnd">@dimen/text_8dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

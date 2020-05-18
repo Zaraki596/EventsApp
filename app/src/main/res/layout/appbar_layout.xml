@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_scrollFlags="scroll|snap|enterAlways"
+        app:titleTextColor="@color/textColorWhite"
         app:title="@string/app_name">
 
     </androidx.appcompat.widget.Toolbar>
