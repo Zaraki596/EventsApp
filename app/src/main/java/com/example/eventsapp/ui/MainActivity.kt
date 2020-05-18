@@ -1,16 +1,25 @@
 package com.example.eventsapp.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.eventsapp.R
 import com.example.eventsapp.databinding.ActivityMainBinding
 import com.example.eventsapp.ui.adapters.BannerListAdpater
 import com.example.eventsapp.ui.adapters.FeaturedListAdapter
 import com.example.eventsapp.ui.adapters.NormalListAdpater
 import com.example.eventsapp.utils.State
+import com.example.eventsapp.utils.applyTheme
+import com.example.eventsapp.utils.isDarkTheme
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -29,17 +38,44 @@ class MainActivity : AppCompatActivity() {
 
     private val mBannerListAdpater = BannerListAdpater()
 
+    private lateinit var sharedPref: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
+        sharedPref = getSharedPreferences(getString(R.string.theme_pref_key), Context.MODE_PRIVATE)
+        val uiMode = sharedPref.getInt(getString(R.string.theme_pref_key), 0)
+        applyTheme(theme = uiMode)
         initViews()
         initData()
 
         binding.refreshMain.setOnRefreshListener {
             loadData()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_uimode -> {
+                val uiMode = if (isDarkTheme()) {
+                    AppCompatDelegate.MODE_NIGHT_NO
+                } else {
+                    AppCompatDelegate.MODE_NIGHT_YES
+                }
+                sharedPref.edit { putInt(getString(R.string.theme_pref_key), uiMode) }
+                applyTheme(uiMode)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
     }
 
     private fun initData() {
@@ -52,7 +88,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 is State.Success -> {
                     binding.refreshMain.isRefreshing = false
+                    //Getting Featured List for featured recycler view
                     val featuredList = state.data.featured
+                    //Mapping out the data from the masterlist using the Category wise list of strings
                     val musicList = state.data.list.masterList.values.filter {
                         state.data.list.categorywiseList.Music.contains(it.slug)
                     }
@@ -71,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                     }.filter {
                         it.applicable_filters.isNotEmpty()
                     }
+                    //Getting the banner list
                     val bannerList = state.data.banners.filter {
                         it.priority == 0
                     }
@@ -109,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerOnlineCourse.adapter = mOnlineListAdapter
 //        ViewPager Setup
         binding.viewpagerBanner.adapter = mBannerListAdpater
-        TabLayoutMediator(binding.tablayoutBanner, binding.viewpagerBanner) { tab, position ->
+        TabLayoutMediator(binding.tablayoutBanner, binding.viewpagerBanner) { _, _ ->
 
         }.attach()
 

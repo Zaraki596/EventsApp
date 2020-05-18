@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -22,9 +22,9 @@
     </style>
 
     <style name="TextPrice">
-        <item name="android:background">@drawable/ic_coupon_01</item>
         <item name="android:fontFamily">sans-serif-condensed-medium</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ic_coupon_01</item>
         <item name="elevation">@dimen/elevation_2dp</item>
         <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
         <item name="android:textColor">@android:color/white</item>
@@ -50,7 +50,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:layout_marginStart">@dimen/text_8dp</item>
         <item name="android:layout_marginEnd">@dimen/text_8dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Caption
         </item>
         <item name="android:textColor">@android:color/white</item>
     </style>
