@@ -42,6 +42,8 @@
                         android:id="@+id/tablayout_banner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:tabMaxWidth="10dp"
+                        android:layout_gravity="bottom|center"
                         app:tabBackground="@drawable/tab_selector"
                         app:tabGravity="center"
                         app:tabIndicatorHeight="0dp" />
@@ -59,7 +61,9 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_featured"
                         android:layout_width="match_parent"
-                        android:layout_height="336dp"
+                        android:layout_height="340dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp" />
 
@@ -77,6 +81,8 @@
                         android:id="@+id/recycler_comedy"
                         android:layout_width="match_parent"
                         android:layout_height="288dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp" />
 
@@ -94,6 +100,8 @@
                         android:id="@+id/recycler_music"
                         android:layout_width="match_parent"
                         android:layout_height="288dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp" />
 
@@ -111,6 +119,8 @@
                         android:id="@+id/recycler_kids"
                         android:layout_width="match_parent"
                         android:layout_height="288dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp" />
 
@@ -128,6 +138,8 @@
                         android:id="@+id/recycler_online_course"
                         android:layout_width="match_parent"
                         android:layout_height="288dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp" />
                 </LinearLayout>
