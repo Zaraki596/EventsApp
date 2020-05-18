@@ -3,7 +3,6 @@ package com.example.eventsapp.ui
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -87,7 +86,6 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, state.message, Toast.LENGTH_LONG).show()
                 }
                 is State.Success -> {
-                    binding.refreshMain.isRefreshing = false
                     //Getting Featured List for featured recycler view
                     val featuredList = state.data.featured
                     //Mapping out the data from the masterlist using the Category wise list of strings
@@ -113,7 +111,8 @@ class MainActivity : AppCompatActivity() {
                     val bannerList = state.data.banners.filter {
                         it.priority == 0
                     }
-                    Log.e("MainActivity", featuredList.toString())
+
+                    //Submitting all the list in the ListAdapter
                     mFeaturedListAdapter.submitList(featuredList)
                     mMusicListAdapter.submitList(musicList)
                     mComedyListAdapter.submitList(comedyList)
@@ -121,6 +120,8 @@ class MainActivity : AppCompatActivity() {
                     mOnlineListAdapter.submitList(onlineCourseList)
 
                     mBannerListAdpater.submitList(bannerList)
+
+                    binding.refreshMain.isRefreshing = false
                 }
             }
 
