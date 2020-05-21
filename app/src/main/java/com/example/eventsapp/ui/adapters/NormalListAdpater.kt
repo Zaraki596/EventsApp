@@ -48,7 +48,13 @@ class NormalListAdpater() :
             } else {
                 binding.ivDisplay.loadImage(event.vertical_cover_image)
             }
-            binding.tvPrice.text = ctx.getString(R.string.ruppee_symbol, event.min_price)
+            binding.tvPrice.text = event.min_price.let {
+                if (it == 0) {
+                    "Free"
+                } else {
+                    ctx.getString(R.string.ruppee_symbol, event.min_price)
+                }
+            }
             binding.tvTitle.text = event.name
             binding.tvTiming.text = event.venue_date_string
             binding.tvLocation.text = event.venue_name
