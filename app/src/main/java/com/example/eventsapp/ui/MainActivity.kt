@@ -91,6 +91,8 @@ class MainActivity : AppCompatActivity() {
                     //Mapping out the data from the masterlist using the Category wise list of strings
                     val musicList = state.data.list.masterList.values.filter {
                         state.data.list.categorywiseList.Music.contains(it.slug)
+                    }.filter {
+                        it.applicable_filters.isNotEmpty()
                     }
                     val comedyList = state.data.list.masterList.values.filter {
                         state.data.list.categorywiseList.Comedy.contains(it.slug)

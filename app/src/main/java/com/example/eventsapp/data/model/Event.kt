@@ -28,7 +28,7 @@ data class Event(
     if it contains either 2 i.e :
     today, weekend then its today,
     tomorrow, weekend then its day after today
-    it it contains 1 i.e : today or tomorrow then it is onetime event
+    it it contains only one value i.e : today or tomorrow then it is onetime event
     if it contains none value then the event never happened or yet to happen or it has been passed
     * */
     val applicable_filters: List<String> = listOf(),
