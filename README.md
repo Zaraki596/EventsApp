@@ -4,7 +4,7 @@ An eventsApp which showcases the current event going on in the City(Mumbai).
 
 ***You can Install and test latest Events app from below 👇***
 
-[EventsApp](https://github.com/Zaraki596/EventsApp/releases/download/1.0/events-app-v-1.0.apk)
+[![EventsApp](https://img.shields.io/badge/EventsApp-APK-green)](https://github.com/Zaraki596/EventsApp/releases/download/1.0/events-app-v-1.0.apk)
 
 <table style="width:100%">
   <tr>
